@@ -1,2 +1,2 @@
 # landing-page
-This is landing page generator.
+This is a simple landing page generator.
