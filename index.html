@@ -22,22 +22,23 @@
         </h2>
         <span flex></span>
         <ul class="top-nav">
-          <li>Your Amazon.com</li>
-          <li>Today's Deals</li>
-          <li>Gift Cards</li>
-          <li>Sell</li>
-          <li>Help</li>
+          <li><a href="#">Your Amazon.com &nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;</a></li>
+          <li><a href="#">Today's Deals &nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;</a></li>
+          <li><a href="#">Gift Cards &nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;</a></li>
+          <li><a href="#">Sell &nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;</a></li>
+          <li><a href="#">Help</a></li>
         </ul>
       </div>
     </md-toolbar>
   </md-content>
+
   <div layout="row">
     <div flex="50" class="product-image">
       <!-- <h1>Product Image</h1> -->
       <!-- <div class="product-image"></div> -->
       <!-- <img src="http://srobbin.com/wp-content/uploads/2012/05/books.jpg"> -->
     </div>
-    <div flex="50" class="container-fluid" style="background-color: #00C0FF;">
+    <div flex="50" class="container-fluid" style="background-color: #FFC107;">
       <div class="row">
         <div class="col-md-9 col-md-offset-2">
           <div class="caption">
@@ -48,10 +49,10 @@
           </div>
           <form class="emailForm">
             <input type="email" name="email" class="form-control subscribe_email" placeholder="Enter your email">
-            <input type="submit" name="submit" class="btn btn-success btn-lg subscribe-btn" value="Subscribe" />
+            <input type="submit" name="submit" class="md-raised btn btn-lg subscribe-btn" value="Subscribe" />
             <!-- <md-button class="md-raised md-accent subscribe-btn">Subscribe</md-button> -->
           </form>
-          <p class="info">Get more information about this product and exciting offers from us.</p>
+          <p class="info">Be the first to get more information and exciting offers from us.</p>
         </div>
       </div>
     </div>
@@ -60,15 +61,19 @@
 
   <section layout="row">
     <div class="product-details">
-      <h1>Product Name</h1>
+      <h1>Best Story Books</h1>
       <p>So, what is the secret of successful template design? First of all, it is its friendliness – both for the template’s owner and for his or her future targeted audience. UX and UI are not just empty phrases for us. It is very important for us that the user could understand correctly the message your project’s trying to say to him or her. But, correct giving of the information is just a half of success.
 
       Emotions that causes your project in visitor are no less important ticket to success. Modern solutions, interesting elements, unique approach to details make this template recognizable and interesting. You project will not look like a template bought in a store and adapted within couple of hours. Oh, no! This is not your case. You obtain qualitative, fascinating and juicy final product that is modern and actual. Qualitative and flexible code lays in base of this great product.</p>
     </div>
   </section>
-  <div layout="row" style="border: 1px solid gray; background-color: #0f0;">
-    <span>Footer</span>
+
+  <div class="container-fluid">
+    <div class="row" style="background-color: #333;">
+      <div class="footer">amazon.com. @2015 All right reserved.</div>
+    </div>
   </div>
+
 
 
   <script src="./libs/angular/angular.js"></script>
@@ -80,8 +85,6 @@
   <script src="./libs/bootstrap/dist/js/bootstrap.min.js"></script>
 
   <script src="./js/app.js"></script>
-
-
 
 </body>
 
