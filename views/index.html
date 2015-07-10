@@ -1,0 +1,52 @@
+  <md-content>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>
+          <span>Amazons.com</span>
+        </h2>
+        <span flex></span>
+        <ul class="top-nav">
+          <li><a href="#">Your Amazon.com &nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;</a></li>
+          <li><a href="#">Today's Deals &nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;</a></li>
+          <li><a href="#">Gift Cards &nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;</a></li>
+          <li><a href="#">Sell &nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;</a></li>
+          <li><a href="#">Help</a></li>
+        </ul>
+      </div>
+    </md-toolbar>
+  </md-content>
+  <div layout="row">
+    <div flex="50">
+      <!-- <h1>Product Image</h1> -->
+      <!-- <div class="product-image"></div> -->
+      <img ng-src="{{ product.image }}">
+    </div>
+    <div flex="50" class="container-fluid" style="background-color: #FFC107;">
+      <div class="row">
+        <div class="col-md-9 col-md-offset-2">
+          <div class="caption">
+            <h2> {{ product.caption }} </h2>
+          </div>
+          <form class="emailForm">
+            <input type="email" name="email" class="form-control subscribe_email" placeholder="Enter your email">
+            <input ng-click="subscribe()" ng-hide="subscribe_btn" type="submit" name="submit" class="md-raised btn btn-lg subscribe-btn" value="Subscribe" />
+            <md-progress-circular class="md-hue-2" md-mode="determinate" value="{{determinateValue}}" ng-if="showProgress" style="margin-top: 20px; margin-left: 150px;"></md-progress-circular>
+            <p class="thanks" ng-show="thankyou">Thanks for subscribing!</p>
+          </form>
+          <p class="info">Be the first to get more information and exciting offers from us.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <md-divider></md-divider>
+  <section layout="row">
+    <div class="product-details">
+      <h1>{{ product.name }}</h1>
+      <p>{{ product.description }} </p>
+    </div>
+  </section>
+  <div class="container-fluid">
+    <div class="row" style="background-color: #333;">
+      <div class="footer">amazon.com. @2015 All right reserved.</div>
+    </div>
+  </div>

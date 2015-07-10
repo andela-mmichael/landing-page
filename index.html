@@ -4,89 +4,25 @@
 <head>
   <title>Landing Page App</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <link rel="stylesheet" type="text/css" href="./libs/angular-material/angular-material.min.css">
   <link rel="stylesheet" type="text/css" href="./libs/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="./css/custom.css">
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:300|Vollkorn">
-
-
 </head>
 
 <body>
-  <md-content>
-    <md-toolbar>
-      <div class="md-toolbar-tools">
-        <h2>
-          <span>Amazons.com</span>
-        </h2>
-        <span flex></span>
-        <ul class="top-nav">
-          <li><a href="#">Your Amazon.com &nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;</a></li>
-          <li><a href="#">Today's Deals &nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;</a></li>
-          <li><a href="#">Gift Cards &nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;</a></li>
-          <li><a href="#">Sell &nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;</a></li>
-          <li><a href="#">Help</a></li>
-        </ul>
-      </div>
-    </md-toolbar>
-  </md-content>
 
-  <div layout="row">
-    <div flex="50" class="product-image">
-      <!-- <h1>Product Image</h1> -->
-      <!-- <div class="product-image"></div> -->
-      <!-- <img src="http://srobbin.com/wp-content/uploads/2012/05/books.jpg"> -->
-    </div>
-    <div flex="50" class="container-fluid" style="background-color: #FFC107;">
-      <div class="row">
-        <div class="col-md-9 col-md-offset-2">
-          <div class="caption">
-            <h2>
-              We have all
-              The Best Stories
-            </h2>        
-          </div>
-          <form class="emailForm">
-            <input type="email" name="email" class="form-control subscribe_email" placeholder="Enter your email">
-            <input type="submit" name="submit" class="md-raised btn btn-lg subscribe-btn" value="Subscribe" />
-            <!-- <md-button class="md-raised md-accent subscribe-btn">Subscribe</md-button> -->
-          </form>
-          <p class="info">Be the first to get more information and exciting offers from us.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <md-divider></md-divider>
+<div ui-view></div>
 
-  <section layout="row">
-    <div class="product-details">
-      <h1>Best Story Books</h1>
-      <p>So, what is the secret of successful template design? First of all, it is its friendliness – both for the template’s owner and for his or her future targeted audience. UX and UI are not just empty phrases for us. It is very important for us that the user could understand correctly the message your project’s trying to say to him or her. But, correct giving of the information is just a half of success.
-
-      Emotions that causes your project in visitor are no less important ticket to success. Modern solutions, interesting elements, unique approach to details make this template recognizable and interesting. You project will not look like a template bought in a store and adapted within couple of hours. Oh, no! This is not your case. You obtain qualitative, fascinating and juicy final product that is modern and actual. Qualitative and flexible code lays in base of this great product.</p>
-    </div>
-  </section>
-
-  <div class="container-fluid">
-    <div class="row" style="background-color: #333;">
-      <div class="footer">amazon.com. @2015 All right reserved.</div>
-    </div>
-  </div>
-
-
-
+  <!-- Scripts  -->
   <script src="./libs/angular/angular.js"></script>
+  <script src="./libs/angular-ui-router/release/angular-ui-router.js"></script>
   <script src="./libs/angular-animate/angular-animate.js"></script>
   <script src="./libs/angular-aria/angular-aria.js"></script>
   <script src="./libs/angular-material/angular-material.js"></script>
-
   <script src="./libs/jquery/dist/jquery.min.js"></script>
   <script src="./libs/bootstrap/dist/js/bootstrap.min.js"></script>
-
   <script src="./js/app.js"></script>
-
 </body>
-
 
 </html>

@@ -1,11 +1,13 @@
 body {
-  font-size: 16px;
+  font-family: 'Roboto' 'sans-serif';
+  min-height: 600px;
+  background-color: #f9f9f9;
 }
-
+/*
 .product-image {
   background-image: url(http://srobbin.com/wp-content/uploads/2012/05/books.jpg);
   height: 400px;
-}
+}*/
 
 .top-nav {
   font-size: 14px;
@@ -35,6 +37,23 @@ h1 {
   height: 70px;
   border-radius: 4px;
   background: #fff;
+}
+
+.progress {
+  /*margin-top: 20px;*/
+}
+
+.thanks {
+  width: 400px;
+  height: 40px;
+  line-height: 38px;
+  margin-top: 20px; 
+  background-color: rgba(38, 50, 56,0.9);
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
 }
 
 .subscribe-btn {
@@ -68,4 +87,43 @@ color: white;
   height: 50px;
   line-height: 48px;
   font-size: 12px;
+}
+
+/* Admin Page */
+thead {
+  background-color: #232F3E;
+  color: white;
+}
+.table-striped > tbody > tr:nth-of-type(even) {
+  background-color: #d7d7d7;
+}
+.history {
+  margin-top: 40px;
+  width: 100px;
+  text-align: center;
+}
+
+.history p {
+  padding-top: 10px;
+  font-size: 12px;
+}
+
+.preview {
+  width: 500px;
+  height: 500px;
+  background-image: url(../img/preview-0.png);
+}
+
+.add-product {
+  padding: 20px 50px;
+}
+.add-product h4 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.input[type=file] {
+  line-height: normal;
+}
+.publish {
+  margin-left: 200px;
 }
