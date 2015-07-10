@@ -12,7 +12,21 @@ app.config(function($mdThemingProvider) {
       .accentPalette('amber');
 });
 
-app.controller('MainController', ['$scope', function($scope) {
+app.controller('MainController', ['$scope', '$interval', function($scope, $interval) {
+
+    $scope.subscribe = function() {
+      $scope.showProgress = true;
+      $scope.subscribe_btn = true;
+      $scope.determinateValue = 10;
+      $interval(function() {
+        $scope.determinateValue += 10;
+        if ($scope.determinateValue > 100) {
+          $scope.determinateValue = 10;
+          $scope.showProgress = false;
+          $scope.thankyou = true;
+        }
+      }, 100, 0, true);
+    };
 
     $scope.product = {
       caption: "We have all the Best Stories",
@@ -39,7 +53,7 @@ app.controller('AdminController', ['$scope', function($scope) {
     console.log(e);
   }
 
-  $scope.submitForm = function(data){
+  $scope.publish = function(data){
     data.created_at = new Date().getTime();
     localStorage.setItem(storageKey, JSON.stringify(data));
   };

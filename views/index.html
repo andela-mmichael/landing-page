@@ -29,8 +29,9 @@
           </div>
           <form class="emailForm">
             <input type="email" name="email" class="form-control subscribe_email" placeholder="Enter your email">
-            <input type="submit" name="submit" class="md-raised btn btn-lg subscribe-btn" value="Subscribe" />
-            <!-- <md-button class="md-raised md-accent subscribe-btn">Subscribe</md-button> -->
+            <input ng-click="subscribe()" ng-hide="subscribe_btn" type="submit" name="submit" class="md-raised btn btn-lg subscribe-btn" value="Subscribe" />
+            <md-progress-circular class="md-hue-2" md-mode="determinate" value="{{determinateValue}}" ng-if="showProgress" style="margin-top: 20px; margin-left: 150px;"></md-progress-circular>
+            <p class="thanks" ng-show="thankyou">Thanks for subscribing!</p>
           </form>
           <p class="info">Be the first to get more information and exciting offers from us.</p>
         </div>
