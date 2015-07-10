@@ -36,12 +36,12 @@ app.controller('MainController', ['$scope', '$interval', function($scope, $inter
       image: 'http://srobbin.com/wp-content/uploads/2012/05/books.jpg'
     };
 
-    try {
-      $scope.product = JSON.parse(localStorage.getItem(storageKey));
-      $scope.product.image = 'http://srobbin.com/wp-content/uploads/2012/05/books.jpg';
-    } catch(e) {
-      console.log(e);
-    }
+    // try {
+    //   $scope.product = JSON.parse(localStorage.getItem(storageKey));
+    //   $scope.product.image = 'http://srobbin.com/wp-content/uploads/2012/05/books.jpg';
+    // } catch(e) {
+    //   console.log(e);
+    // }
     
   }]);
 
