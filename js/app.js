@@ -47,11 +47,11 @@ app.controller('MainController', ['$scope', '$interval', function($scope, $inter
 
 app.controller('AdminController', ['$scope', function($scope) {
 
-  try {
-    $scope.data = JSON.parse(localStorage.getItem(storageKey));
-  } catch(e) {
-    console.log(e);
-  }
+  // try {
+  //   $scope.data = JSON.parse(localStorage.getItem(storageKey));
+  // } catch(e) {
+  //   console.log(e);
+  // }
 
   $scope.publish = function(data){
     data.created_at = new Date().getTime();
