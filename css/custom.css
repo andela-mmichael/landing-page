@@ -1,5 +1,6 @@
 body {
   font-family: 'Roboto' 'sans-serif';
+  background-color: #f4f4f4;
 }
 
 .product-image {
@@ -71,3 +72,27 @@ color: white;
 }
 
 /* Admin Page */
+
+.history {
+  height: 400px;
+}
+
+.preview {
+  width: 550px;
+  height: 500px;
+  background-color: white;
+}
+
+.add-product {
+  padding: 20px 50px;
+}
+.add-product h4 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.input[type=file] {
+  line-height: normal;
+}
+.publish {
+  margin-left: 200px;
+}
