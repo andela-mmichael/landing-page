@@ -1,20 +1,4 @@
-<!DOCTYPE html>
-<html ng-app="LandingPageApp">
-
-<head>
-  <title>Admin Page</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="stylesheet" type="text/css" href="./libs/angular-material/angular-material.min.css">
-  <link rel="stylesheet" type="text/css" href="./libs/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="./css/custom.css">
-  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:300|Vollkorn">
-
-
-</head>
-
-<body>
-  <md-content>
+<md-content>
     <md-toolbar>
       <div class="md-toolbar-tools">
         <h2>
@@ -25,49 +9,118 @@
           <span>Dashboard</span>
         </h2>
         <span flex></span>
-
-        <span>username</span>
+        <span class="top-nav">username</span>
         <span><img src=""></span>
       </div>
     </md-toolbar>
   </md-content>
-
   <div class="container-fluid">
     <div class="row">
-      <div flex="50" class="container-fluid" style="background-color: #FFC107;">
-        <div class="row">
-          <div class="col-md-6">
-            <h1>Add Product/Category</h1>
+        <div class="col-md-6 add-product">
+          <h4>Add Product/Category</h4>
+          <form class="form-horizontal">
+            <div class="form-group">
+              <label for="caption" class="col-sm-4 control-label">Caption</label>
+              <div class="col-sm-8">
+                <input type="text" ng-model="data.caption" required class="form-control">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="product-name" class="col-sm-4 control-label">Product Name</label>
+              <div class="col-sm-8">
+                <input type="text" ng-model="data.name" required class="form-control">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="product-image" class="col-sm-4 control-label">Product Image</label>
+              <div class="col-sm-8">
+                <input type="file">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="product-description" class="col-sm-4 control-label">Product Description</label>
+              <div class="col-sm-8">
+                <textarea ng-model="data.description" required class="form-control"></textarea>
+              </div>
+            </div>
+            <div class="form-group" style="margin-left: 250px;">
+              <div class="col-sm-3">
+                <md-button class="md-raised md-warn">Cancel</md-button>
+              </div>
+              <div class="col-sm-3 col-sm-offset-2">
+                <md-button ng-click="submitForm(data)" class="md-raised md-primary">Publish</md-button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-6 add-product">
+          <div class="row">
+            <div>
+              <h4>Template Preview</h4>
+            </div>
+            <div class="preview">
+            </div>
           </div>
-          <div class="col-md-6">
-            <h1>View History</h1>
+        </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+      <div class="row" style="margin-top: 50px; background-color: #f9f9f9;">
+        <div class="col-md-10 col-md-offset-1">
+          <div class="col-md-2 ">
+            <div class="history">
+              <img src="../img/historical.png" width="64px" height="64px">
+              <p>View History</p>
+            </div>
+          </div>
+          <div class="col-md-10">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Published Date</th>
+                  <th>Caption</th>
+                  <th>Product Name</th>
+                  <th>Product Description</th>
+                  <th>Product Image</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>10th July, 2015</td>
+                  <td>John</td>
+                  <td><a href="#">amazon.com/product/1234</a></td>
+                  <td>Carter</td>
+                  <td>johncarter@mail.com</td>
+                </tr>
+                <tr>
+                  <td>28th June, 2015</td>
+                  <td>Peter</td>
+                  <td><a href="#">amazon.com/product/1234</a></td>
+                  <td>Parker</td>
+                  <td>peterparker@mail.com</td>
+                </tr>
+                <tr>
+                  <td>23rd June, 2015</td>
+                  <td>John</td>
+                  <td><a href="#">amazon.com/product/1234</a></td>
+                  <td>Rambo</td>
+                  <td>johnrambo@mail.com</td>
+                </tr>
+                <tr>
+                  <td>9th May, 2015</td>
+                  <td>John</td>
+                  <td><a href="#">amazon.com/product/1234</a></td>
+                  <td>Rambo</td>
+                  <td>johnrambo@mail.com</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
-    </div>
   </div>
-  <md-divider></md-divider>
-
   <div class="container-fluid">
     <div class="row" style="background-color: #333;">
-      <div class="footer">amazon.com. @2015 All right reserved.</div>
+      <div class="footer">amazon.com. &copy; 2015 All right reserved.</div>
     </div>
   </div>
-
-
-
-  <script src="./libs/angular/angular.js"></script>
-  <script src="./libs/angular-animate/angular-animate.js"></script>
-  <script src="./libs/angular-aria/angular-aria.js"></script>
-  <script src="./libs/angular-material/angular-material.js"></script>
-  <script src="./libs/angular-route/angular-route.js"></script>
-
-  <script src="./libs/jquery/dist/jquery.min.js"></script>
-  <script src="./libs/bootstrap/dist/js/bootstrap.min.js"></script>
-
-  <script src="./js/app.js"></script>
-
-</body>
-
-
-</html>
