@@ -3,11 +3,6 @@ body {
   min-height: 600px;
   background-color: #f9f9f9;
 }
-/*
-.product-image {
-  background-image: url(http://srobbin.com/wp-content/uploads/2012/05/books.jpg);
-  height: 400px;
-}*/
 
 .top-nav {
   font-size: 14px;
@@ -93,6 +88,9 @@ color: white;
 thead {
   background-color: #232F3E;
   color: white;
+}
+textarea {
+  min-height: 200px;
 }
 .table-striped > tbody > tr:nth-of-type(even) {
   background-color: #d7d7d7;

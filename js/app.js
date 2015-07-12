@@ -45,17 +45,26 @@ app.controller('MainController', ['$scope', '$interval', function($scope, $inter
     
   }]);
 
-app.controller('AdminController', ['$scope', function($scope) {
+app.controller('AdminController', ['$scope', '$timeout',  function($scope, $timeout) {
 
-  try {
-    $scope.data = JSON.parse(localStorage.getItem(storageKey));
-  } catch(e) {
-    console.log(e);
-  }
+  // try {
+  //   $scope.data = JSON.parse(localStorage.getItem(storageKey));
+  // } catch(e) {
+  //   console.log(e);
+  // }
 
   $scope.publish = function(data){
     data.created_at = new Date().getTime();
     localStorage.setItem(storageKey, JSON.stringify(data));
+    $scope.published = true;
+    $timeout(function() {
+      $scope.published = false;
+      $scope.$apply();
+    }, 3000);
+  };
+
+  $scope.cancel = function(data) {
+    $scope.data = null;
   };
 
 }]);
