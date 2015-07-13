@@ -29,17 +29,19 @@ app.controller('ProductController', ['$scope', '$interval', 'Products', '$stateP
       }, 100, 0, true);
     };
 
-    if($stateParams.productId){
-      $scope.product = Products.get($stateParams.productId);
-    }
-
     $scope.product = {
       caption: "We have all the Best Stories",
       name: "Best Story Books",
       description: "So, what is the secret of successful description.",
-      pubDate: new Date(),
+      publishedDate: new Date(),
       image: 'http://srobbin.com/wp-content/uploads/2012/05/books.jpg'
     };
+    
+    if($stateParams.productId){
+      $scope.product = Products.get($stateParams.productId);
+    }
+
+    
 
    
     
@@ -52,11 +54,12 @@ app.controller('AdminController', ['$scope', '$timeout', 'Products', '$statePara
     //   $scope.product = Products.get($stateParams.productId);
     // }
   $scope.products = Products.all;
+  // $scope.products.publishedDate = $scope.products.publishedDate;
 
   $scope.publish = function(data){
     data.publishedDate = new Date().getTime();
     console.log(data);
-    Products.add(data);
+    // Products.add(data);
     $scope.published = true;
     $timeout(function() {
       $scope.published = false;
