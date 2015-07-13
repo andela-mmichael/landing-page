@@ -12,7 +12,7 @@ app.config(function($mdThemingProvider) {
       .accentPalette('amber');
 });
 
-app.controller('MainController', ['$scope', '$interval', function($scope, $interval) {
+app.controller('ProductController', ['$scope', '$interval', function($scope, $interval) {
 
     $scope.subscribe = function() {
       $scope.showProgress = true;
@@ -72,13 +72,20 @@ app.controller('AdminController', ['$scope', '$timeout',  function($scope, $time
 
  app.config(function($stateProvider, $urlRouterProvider){
 
-  $urlRouterProvider.otherwise("/");
+  $urlRouterProvider.otherwise("/product");
+
+  $urlRouterProvider.when("/", "/product");
 
   $stateProvider
-    .state('home', {
-      url: "/",
-      templateUrl: "views/index.html",
-      controller: 'MainController'
+    .state("product", {
+      url: "/product",
+      templateUrl: "views/product.html",
+      controller: 'ProductController'
+    })
+    .state("product", {
+      url: "/product/:id",
+      templateUrl: "views/product.html",
+      controller: 'ProductController'
     })
     .state('admin', {
       url: "/admin",
