@@ -13,8 +13,8 @@ app.config(function($mdThemingProvider) {
       .accentPalette('amber');
 });
 
-app.controller('ProductController', ['$scope', '$interval', function($scope, $interval) {
-
+app.controller('ProductController', ['$scope', '$interval', 'Products', '$stateParams', 
+  function($scope, $interval, Products, $stateParams) {
     $scope.subscribe = function() {
       $scope.showProgress = true;
       $scope.subscribe_btn = true;
@@ -29,6 +29,10 @@ app.controller('ProductController', ['$scope', '$interval', function($scope, $in
       }, 100, 0, true);
     };
 
+    if($stateParams.productId){
+      $scope.product = Products.get($stateParams.productId);
+    }
+
     $scope.product = {
       caption: "We have all the Best Stories",
       name: "Best Story Books",
@@ -37,26 +41,22 @@ app.controller('ProductController', ['$scope', '$interval', function($scope, $in
       image: 'http://srobbin.com/wp-content/uploads/2012/05/books.jpg'
     };
 
-    try {
-      $scope.product = JSON.parse(localStorage.getItem(storageKey));
-      $scope.product.image = 'http://srobbin.com/wp-content/uploads/2012/05/books.jpg';
-    } catch(e) {
-      console.log(e);
-    }
+   
     
   }]);
 
-app.controller('AdminController', ['$scope', '$timeout',  function($scope, $timeout) {
+app.controller('AdminController', ['$scope', '$timeout', 'Products', '$stateParams',  
+  function($scope, $timeout, Products, $stateParams) {
 
-  // try {
-  //   $scope.data = JSON.parse(localStorage.getItem(storageKey));
-  // } catch(e) {
-  //   console.log(e);
-  // }
+    // if($stateParams.productId){
+    //   $scope.product = Products.get($stateParams.productId);
+    // }
+  $scope.products = Products.all;
 
   $scope.publish = function(data){
-    data.created_at = new Date().getTime();
-    localStorage.setItem(storageKey, JSON.stringify(data));
+    data.publishedDate = new Date().getTime();
+    console.log(data);
+    Products.add(data);
     $scope.published = true;
     $timeout(function() {
       $scope.published = false;
@@ -83,8 +83,8 @@ app.controller('AdminController', ['$scope', '$timeout',  function($scope, $time
       templateUrl: "views/product.html",
       controller: 'ProductController'
     })
-    .state("product", {
-      url: "/product/:id",
+    .state("product-details", {
+      url: "/product/:productId",
       templateUrl: "views/product.html",
       controller: 'ProductController'
     })

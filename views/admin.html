@@ -86,33 +86,12 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>10th July, 2015</td>
-              <td>Laptops</td>
-              <td><a href="#">amazon.com/product/1234</a></td>
-              <td>Carter</td>
-              <td>johncarter@mail.com</td>
-            </tr>
-            <tr>
-              <td>28th June, 2015</td>
-              <td>Headphones</td>
-              <td><a href="#">amazon.com/product/1234</a></td>
-              <td>Parker</td>
-              <td>peterparker@mail.com</td>
-            </tr>
-            <tr>
-              <td>23rd June, 2015</td>
-              <td>Books</td>
-              <td><a href="#">amazon.com/product/1234</a></td>
-              <td>Rambo</td>
-              <td>johnrambo@mail.com</td>
-            </tr>
-            <tr>
-              <td>9th May, 2015</td>
-              <td>Mens wear</td>
-              <td><a href="#">amazon.com/product/1234</a></td>
-              <td>This one of the best design in vogue.</td>
-              <td>johnrambo@mail.com</td>
+            <tr ng-repeat="product in products">
+              <td>{{ product.pubDate }}</td>
+              <td>{{ product.caption }}</td>
+              <td><a href="#/product/{{ product.$id }}">{{ product.name }}</a></td>
+              <td>{{ product.description}}</td>
+              <td>product image is here</td>
             </tr>
           </tbody>
         </table>

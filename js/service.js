@@ -1,7 +1,7 @@
 app.factory('Products', ['$firebaseArray', '$firebaseObject',
   function($firebaseArray, $firebaseObject) {
     var ref = new Firebase('https://landingpage-gen.firebaseio.com/');
-    var products = $firebase(ref.child('products')).$asArray();
+    var products = $firebaseArray(ref.child('products'));
 
     var Products = {
       all: products,
@@ -9,7 +9,7 @@ app.factory('Products', ['$firebaseArray', '$firebaseObject',
         return products.$add(product);
       },
       get: function (productId) {
-        return $firebase(ref.child('products').child(productId)).$asObject();
+        return $firebaseObject(ref.child('products').child(productId));
       },
       delete: function (product) {
         return products.$remove(product);
