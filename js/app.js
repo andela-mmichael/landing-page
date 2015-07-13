@@ -58,8 +58,8 @@ app.controller('AdminController', ['$scope', '$timeout', 'Products', '$statePara
 
   $scope.publish = function(data){
     data.publishedDate = new Date().getTime();
-    console.log(data);
-    // Products.add(data);
+    // console.log(data);
+    Products.add(data);
     $scope.published = true;
     $timeout(function() {
       $scope.published = false;
