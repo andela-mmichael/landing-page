@@ -5,8 +5,6 @@ var app = angular.module('LandingPageApp', [
   'firebase'
   ]);
 
-var storageKey = 'CMS';
-
 app.config(function($mdThemingProvider) {
     $mdThemingProvider.theme('default')
       .primaryPalette('blue-grey')
@@ -50,17 +48,14 @@ app.controller('ProductController', ['$scope', '$interval', 'Products', '$stateP
 app.controller('AdminController', ['$scope', '$timeout', 'Products', '$stateParams',  
   function($scope, $timeout, Products, $stateParams) {
 
-    // if($stateParams.productId){
-    //   $scope.product = Products.get($stateParams.productId);
-    // }
   $scope.products = Products.all;
-  // $scope.products.publishedDate = $scope.products.publishedDate;
 
   $scope.publish = function(data){
     data.publishedDate = new Date().getTime();
     // console.log(data);
     Products.add(data);
     $scope.published = true;
+    $scope.home = true;
     $timeout(function() {
       $scope.published = false;
       $scope.$apply();
