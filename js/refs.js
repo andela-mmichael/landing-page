@@ -4,5 +4,7 @@ app.factory('Refs', function() {
   return {
     rootRef: root,
     products: rootRef.child('products')
-  };
+  }
 });
+
+$firebase(ref.child('posts')).$asArray();

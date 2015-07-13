@@ -1,7 +1,8 @@
 
 var app = angular.module('LandingPageApp', [
   'ngMaterial',
-  'ui.router'
+  'ui.router',
+  'firebase'
   ]);
 
 var storageKey = 'CMS';
